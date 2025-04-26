@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>햄의 필사앱</title>
+  <style>
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background-color: #F9F9F9;
+      margin: 0;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+    .message {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .mood, .author, .date {
+      font-size: 14px;
+      color: #888;
+      margin: 2px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>햄의 필사앱 🐰</h1>
+  <div id="quote-list"></div>
+
+  <script>
+    const quotes = [
+      {
+        message: "당신이 있는 그대로의 당신일 때, 세상은 가장 아름답다.",
+        mood: "위로, 나다움, 자존감, 자신감",
+        author: "aass?",
+        date: "2025.04.26"
+      },
+      {
+        message: "나는 나를 사랑하기로 했다. 그것이 삶이 나를 사랑하도록 만드는 첫 걸음이었다.",
+        mood: "위로, 나다움, 자존감, 자신감",
+        author: "aass?",
+        date: "2025.04.26"
+      }
+    ];
+
+    const listEl = document.getElementById('quote-list');
+    quotes.forEach(q => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="message">"${q.message}"</div>
+        <div class="mood">무드: ${q.mood}</div>
+        <div class="author">출처: ${q.author}</div>
+        <div class="date">업로드: ${q.date}</div>
+      `;
+      card.onclick = () => {
+        alert('필사화면 이동 (준비중)');
+      };
+      listEl.appendChild(card);
+    });
+  </script>
+</body>
+</html>
