@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>햄의 필사앱</title>
+</head>
+<body style="font-family: sans-serif; background: #f9f9f9; padding: 20px;">
+  <h1>햄의 필사앱 🐰</h1>
+  <div id="quote-list"></div>
+
+  <script>
+    const quotes = [
+      {
+        message: "당신이 있는 그대로의 당신일 때, 세상은 가장 아름답다.",
+        mood: "위로, 나다움, 자존감, 자신감",
+        author: "aass?",
+        date: "2025.04.26"
+      },
+      {
+        message: "나는 나를 사랑하기로 했다. 그것이 삶이 나를 사랑하도록 만드는 첫 걸음이었다.",
+        mood: "위로, 나다움, 자존감, 자신감",
+        author: "aass?",
+        date: "2025.04.26"
+      },
+    ];
+
+    const listEl = document.getElementById('quote-list');
+    quotes.forEach(q => {
+      const card = document.createElement('div');
+      card.style.background = '#fff';
+      card.style.padding = '15px';
+      card.style.margin = '10px 0';
+      card.style.borderRadius = '8px';
+      card.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+      card.innerHTML = `
+        <p style="font-size:18px;">"${q.message}"</p>
+        <p style="color:#777;">무드: ${q.mood}</p>
+        <p style="color:#999; font-size: 14px;">출처: ${q.author} | 업로드: ${q.date}</p>
+      `;
+      card.onclick = () => {
+        alert('필사하러 이동하기 (준비중!)');
+      };
+      listEl.appendChild(card);
+    });
+  </script>
+</body>
+</html>
